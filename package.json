@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "format": "prettier --write .",
-    "lint": "ng lint"
+    "lint": "npx eslint \"src/**/*.{js,jsx,ts,tsx,html}\" --quiet",
+    "lint:fix": "npx eslint \"src/**/*.{js,jsx,ts,tsx,html}\" --quiet --fix"
   },
   "private": true,
   "dependencies": {
