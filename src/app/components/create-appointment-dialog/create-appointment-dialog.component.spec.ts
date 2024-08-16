@@ -8,10 +8,9 @@ describe('CreateAppointmentDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CreateAppointmentDialogComponent]
-    })
-    .compileComponents();
-    
+      imports: [CreateAppointmentDialogComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(CreateAppointmentDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

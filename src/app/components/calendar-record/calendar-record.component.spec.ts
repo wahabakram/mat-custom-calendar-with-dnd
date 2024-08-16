@@ -8,10 +8,9 @@ describe('CalendarRecordComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CalendarRecordComponent]
-    })
-    .compileComponents();
-    
+      imports: [CalendarRecordComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(CalendarRecordComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

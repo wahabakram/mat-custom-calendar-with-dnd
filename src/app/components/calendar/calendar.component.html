@@ -2,30 +2,41 @@
 <app-calendar-header [month]="month" (monthChange)="monthChange($event)"></app-calendar-header>
 <!-- Body -->
 <mat-card appearance="outlined">
-    <mat-card-content>
-        <table class="table table-compact">
-            <tbody cdkDropListGroup>
-                <tr>
-                    <th>Sunday</th>
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                    <th>Saturday</th>
-                </tr>
-                <tr *ngFor="let week of weeks">
-                    <td class="left" *ngFor="let day of days" cdkDropList [cdkDropListData]="getEvents(week, day)"
-                        [id]="'' + week + ',' + day" (click)="addEditRecord(day, week)"
-                        (cdkDropListDropped)="dropItem($event)">
-                        <div>{{ dates[week][day] }}</div>
-                        <app-calendar-record cdkDrag cdkDragHandle
-                            *ngFor="let control of getEvents(week, day); let i = index" [control]="control"
-                            (edit)="addEditRecord(day, week, i)" (delete)="deleteRecord(day, week, control)"
-                            (click)="$event.stopPropagation()">DragItem</app-calendar-record>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </mat-card-content>
+  <mat-card-content>
+    <table class="table table-compact">
+      <tbody cdkDropListGroup>
+        <tr>
+          <th>Sunday</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
+        </tr>
+        <tr *ngFor="let week of weeks">
+          <td
+            class="left"
+            *ngFor="let day of days"
+            cdkDropList
+            [cdkDropListData]="getEvents(week, day)"
+            [id]="'' + week + ',' + day"
+            (click)="addEditRecord(day, week)"
+            (cdkDropListDropped)="dropItem($event)">
+            <div>{{ dates[week][day] }}</div>
+            <app-calendar-record
+              cdkDrag
+              cdkDragHandle
+              *ngFor="let control of getEvents(week, day); let i = index"
+              [control]="control"
+              (edit)="addEditRecord(day, week, i)"
+              (delete)="deleteRecord(day, week, control)"
+              (click)="$event.stopPropagation()">
+              DragItem
+            </app-calendar-record>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
 </mat-card>

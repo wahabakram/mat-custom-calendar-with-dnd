@@ -1,17 +1,8 @@
 import { Component, inject } from '@angular/core';
-import {
-  CdkDragDrop,
-  DragDropModule,
-  moveItemInArray,
-  transferArrayItem,
-} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { formatDate, NgFor } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import {
-  MatDialog,
-  MatDialogRef,
-  MatDialogConfig,
-} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
 import { getDates } from '@utils/dates';
 import { pull, range } from '@utils/array';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -24,13 +15,7 @@ import { CalendarService, EventData } from '@services/calendar.service';
 @Component({
   selector: 'app-calendar',
   standalone: true,
-  imports: [
-    NgFor,
-    DragDropModule,
-    CalendarHeaderComponent,
-    CalendarRecordComponent,
-    MatCardModule,
-  ],
+  imports: [NgFor, DragDropModule, CalendarHeaderComponent, CalendarRecordComponent, MatCardModule],
   templateUrl: './calendar.component.html',
   styleUrl: './calendar.component.scss',
 })
@@ -40,8 +25,7 @@ export class CalendarComponent {
   private _calendarService = inject(CalendarService);
 
   private dialogRef!: MatDialogRef<CreateAppointmentDialogComponent, EventData>;
-  private inputConfig: MatDialogConfig<EventData> =
-    this._calendarService.getDefaultDialogConfig();
+  private inputConfig: MatDialogConfig<EventData> = this._calendarService.getDefaultDialogConfig();
 
   today = new Date();
   tempDate = new Date();
@@ -71,10 +55,7 @@ export class CalendarComponent {
       };
     }
 
-    this.dialogRef = this.dialog.open(
-      CreateAppointmentDialogComponent,
-      this.inputConfig
-    );
+    this.dialogRef = this.dialog.open(CreateAppointmentDialogComponent, this.inputConfig);
     this.dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         const tempFormGroup = this._fb.group({
@@ -117,11 +98,7 @@ export class CalendarComponent {
 
   dropItem(event: CdkDragDrop<FormGroup[]>) {
     if (event.previousContainer === event.container) {
-      moveItemInArray(
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
       const [week, day] = event.container.id.split(',');
       const date = this.getDate(parseInt(week, 10), parseInt(day, 10));
@@ -129,10 +106,7 @@ export class CalendarComponent {
         parseInt(event.previousContainer.id.split(',')[0], 10),
         parseInt(event.previousContainer.id.split(',')[1], 10)
       );
-      const item = event.previousContainer.data.splice(
-        event.previousIndex,
-        1
-      )[0];
+      const item = event.previousContainer.data.splice(event.previousIndex, 1)[0];
       if (!this.events[date]) {
         this.events[date] = [];
       }
@@ -162,10 +136,7 @@ export class CalendarComponent {
     for (let week = 0; week < weeks; week++) {
       const days = [];
       for (let day = 0; day < DAYS_IN_WEEK; day++) {
-        const time =
-          startTime +
-          DAYS_IN_WEEK * week * DAY_MILLISECONDS +
-          day * DAY_MILLISECONDS;
+        const time = startTime + DAYS_IN_WEEK * week * DAY_MILLISECONDS + day * DAY_MILLISECONDS;
         days.push(new Date(time).getDate());
       }
       newDates.push(days);

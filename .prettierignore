@@ -1,15 +1,19 @@
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
-
+# e2e
 # Compiled output
 /dist
+/build
 /tmp
 /out-tsc
 /bazel-out
+
+/src/assets
 
 # Node
 /node_modules
 npm-debug.log
 yarn-error.log
+yarn.lock
+package-lock.json
 
 # IDEs and editors
 .idea/
@@ -19,7 +23,6 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
-.angular
 
 # Visual Studio Code
 .vscode/*
@@ -38,9 +41,18 @@ yarn-error.log
 testem.log
 /typings
 
+.husky
+.prettierignore
+
 # System files
 .DS_Store
 Thumbs.db
+.prettierrc
 
-.nx/cache
-.nx/workspace-data
+.stylelintignore
+.gitignore
+.eslintignore
+.editorconfig
+.browserslistrc
+.eslintrc
+src/favicon.ico

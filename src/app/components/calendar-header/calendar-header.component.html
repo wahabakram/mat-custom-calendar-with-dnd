@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
-    <mat-toolbar-row class="calendar-toolbar-row">
-        <mat-icon mat-icon-button (click)="monthChange.emit('previous')">chevron_left</mat-icon>
-        <span>{{ month }}</span>
-        <mat-icon mat-icon-button (click)="monthChange.emit('next')">chevron_right</mat-icon>
-    </mat-toolbar-row>
+  <mat-toolbar-row class="calendar-toolbar-row">
+    <mat-icon mat-icon-button (click)="monthChange.emit('previous')">chevron_left</mat-icon>
+    <span>{{ month }}</span>
+    <mat-icon mat-icon-button (click)="monthChange.emit('next')">chevron_right</mat-icon>
+  </mat-toolbar-row>
 </mat-toolbar>

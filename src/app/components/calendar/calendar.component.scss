@@ -1,54 +1,54 @@
 :host {
-    display: block;
-    height: 100%;
-    padding: 10px;
+  display: block;
+  height: 100%;
+  padding: 10px;
 }
 
 table {
-    table-layout: fixed;
-    margin: 0;
-    height: calc(100% - 62px);
-    width: 100%;
+  table-layout: fixed;
+  margin: 0;
+  height: calc(100% - 62px);
+  width: 100%;
 }
 
 td {
-    padding: 3px 3px 20px;
+  padding: 3px 3px 20px;
 }
 
 tr:not(:first-child) {
-    height: calc(20vh - 32px);
+  height: calc(20vh - 32px);
 }
 
-tr:first-child>th {
-    padding-left: 0;
-    padding-right: 0;
-    background-color: rgba(0, 0, 0, 0.12);
+tr:first-child > th {
+  padding-left: 0;
+  padding-right: 0;
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 td:not(:last-child),
 th:not(:last-child) {
-    border-right: 1px solid #ccc;
-    // transition: all 0.4s linear;
+  border-right: 1px solid #ccc;
+  // transition: all 0.4s linear;
 }
 td:not(:last-child):hover,
 th:not(:last-child):hover {
-    background-color: rgba(0, 0, 0, 0.058);
+  background-color: rgba(0, 0, 0, 0.058);
 }
 
 tr:first-child {
-    height: 20px;
+  height: 20px;
 }
 
 div {
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 2px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 2px;
 }
 
 .desc {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    font-size: 16px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 16px;
 }
