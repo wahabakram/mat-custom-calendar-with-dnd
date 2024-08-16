@@ -1,0 +1,13 @@
+<ng-container *ngIf="control">
+    <div (click)="edit.next()" class="record">
+        <div>
+            <div class="title text-ellipsis">
+                <b>{{ control.value?.title }}</b>
+            </div>
+            <div class="description text-ellipsis" *ngIf="control.value?.description">
+                {{ control.value.description }}
+            </div>
+        </div>
+        <mat-icon mat-raised-button color="primary" (click)="$event.stopPropagation(); delete.next()">close</mat-icon>
+    </div>
+</ng-container>

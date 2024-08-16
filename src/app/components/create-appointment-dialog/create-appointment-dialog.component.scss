@@ -1,0 +1,14 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog-title {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    mat-icon {
+        cursor: pointer;
+    }
+}

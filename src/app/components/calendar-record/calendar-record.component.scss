@@ -1,0 +1,63 @@
+:host {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.record {
+    display: flex;
+    cursor: pointer;
+    place-content: space-between;
+    align-items: center;
+
+    .title {
+        width: 120px;
+    }
+
+    .description {
+        width: 120px;
+        font-size: 0.8rem;
+    }
+}
+
+div {
+    cursor: move;
+    border-radius: 3px;
+    background-color: lightgray;
+    color: black;
+    padding: 3px;
+}
+
+:host.cdk-drag-preview>div {
+    cursor: move;
+    opacity: 0.25;
+}
+
+:host.cdk-drag-animating {
+    transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+:host.cdk-drag-placeholder {
+    opacity: 0.5;
+    margin-right: -10px;
+    margin-left: 5px;
+}
+
+.red {
+    background-color: red;
+    color: white;
+}
+
+.blue {
+    background-color: blue;
+    color: white;
+}
+
+.yellow {
+    background-color: yellow;
+    color: black;
+}
+
+.green {
+    background-color: lightgreen;
+    color: black;
+}
